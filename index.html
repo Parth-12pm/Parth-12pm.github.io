@@ -1,1 +1,175 @@
-<h1>Hii there this is my portfolio</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parth Mahadik - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">PM</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-name">Parth Mahadik</h1>
+                <h2 class="hero-subtitle">Aspiring Data Scientist & Developer</h2>
+                <div class="typewriter-container">
+                    <span class="typewriter-text">React Developer</span>
+                    <span class="cursor">|</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="cube-container">
+                    <div class="cube">
+                        <div class="face front">JS</div>
+                        <div class="face back">ML</div>
+                        <div class="face right">React</div>
+                        <div class="face left">Data</div>
+                        <div class="face top">AI</div>
+                        <div class="face bottom">Web</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate developer and aspiring data scientist with a strong foundation in web technologies 
+                        and machine learning. Currently pursuing my journey in the tech world, I love creating innovative 
+                        solutions that bridge the gap between data insights and user-friendly applications.
+                    </p>
+                    <p>
+                        My experience spans across frontend development with React, backend technologies, and data analysis. 
+                        I'm constantly learning new technologies and applying them to real-world projects that make a difference.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid" id="skills-container">
+                <!-- Skills will be dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline" id="experience-container">
+                <!-- Experience will be dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid" id="projects-container">
+                <!-- Projects will be dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p id="email-text">parthsmahadik12027@gmail.com</p>
+                            <div class="contact-actions">
+                                <a href="mailto:parthsmahadik12027@gmail.com" class="btn btn-small">Send Email</a>
+                                <button onclick="copyToClipboard('parthsmahadik12027@gmail.com')" class="btn btn-small btn-secondary">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p id="phone-text">+91 98765 43210</p>
+                            <div class="contact-actions">
+                                <button onclick="copyToClipboard('+91 98765 43210')" class="btn btn-small">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-visual">
+                    <div class="globe-container">
+                        <div class="globe">
+                            <div class="globe-sphere"></div>
+                            <div class="globe-ring ring-1"></div>
+                            <div class="globe-ring ring-2"></div>
+                            <div class="globe-ring ring-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Parth Mahadik. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
