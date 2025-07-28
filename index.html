@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parth Mahadik - Portfolio</title>
+    <title>Lorem Ipsum - Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+    </button>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">PM</div>
+            <div class="nav-logo">LI</div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -26,10 +31,10 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-name">Parth Mahadik</h1>
-                <h2 class="hero-subtitle">Aspiring Data Scientist & Developer</h2>
+                <h1 class="hero-name">Lorem Ipsum</h1>
+                <h2 class="hero-subtitle">Consectetur Adipiscing & Developer</h2>
                 <div class="typewriter-container">
-                    <span class="typewriter-text">React Developer</span>
+                    <span class="typewriter-text">Frontend Developer</span>
                     <span class="cursor">|</span>
                 </div>
                 <div class="hero-buttons">
@@ -38,17 +43,38 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="cube-container">
-                    <div class="cube">
-                        <div class="face front">JS</div>
-                        <div class="face back">ML</div>
-                        <div class="face right">React</div>
-                        <div class="face left">Data</div>
-                        <div class="face top">AI</div>
-                        <div class="face bottom">Web</div>
+                <div class="floating-elements">
+                    <div class="floating-card card-1">
+                        <div class="card-content">
+                            <div class="card-icon">💻</div>
+                            <span>Code</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="card-content">
+                            <div class="card-icon">🎨</div>
+                            <span>Design</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-3">
+                        <div class="card-content">
+                            <div class="card-icon">⚡</div>
+                            <span>Speed</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-4">
+                        <div class="card-content">
+                            <div class="card-icon">🚀</div>
+                            <span>Launch</span>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="hero-bg-animation">
+            <div class="bg-circle circle-1"></div>
+            <div class="bg-circle circle-2"></div>
+            <div class="bg-circle circle-3"></div>
         </div>
     </section>
 
@@ -59,26 +85,23 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a passionate developer and aspiring data scientist with a strong foundation in web technologies 
-                        and machine learning. Currently pursuing my journey in the tech world, I love creating innovative 
-                        solutions that bridge the gap between data insights and user-friendly applications.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
                     <p>
-                        My experience spans across frontend development with React, backend technologies, and data analysis. 
-                        I'm constantly learning new technologies and applying them to real-world projects that make a difference.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </div>
                 <div class="about-stats">
                     <div class="stat-item">
                         <div class="stat-number">50+</div>
-                        <div class="stat-label">Projects Completed</div>
+                        <div class="stat-label">Lorem Projects</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">2+</div>
-                        <div class="stat-label">Years Experience</div>
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years Ipsum</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">10+</div>
+                        <div class="stat-number">15+</div>
                         <div class="stat-label">Technologies</div>
                     </div>
                 </div>
@@ -126,10 +149,10 @@
                         <div class="contact-icon">📧</div>
                         <div class="contact-details">
                             <h3>Email</h3>
-                            <p id="email-text">parthsmahadik12027@gmail.com</p>
+                            <p id="email-text">lorem@ipsum.com</p>
                             <div class="contact-actions">
-                                <a href="mailto:parthsmahadik12027@gmail.com" class="btn btn-small">Send Email</a>
-                                <button onclick="copyToClipboard('parthsmahadik12027@gmail.com')" class="btn btn-small btn-secondary">Copy</button>
+                                <a href="mailto:lorem@ipsum.com" class="btn btn-small">Send Email</a>
+                                <button onclick="copyToClipboard('lorem@ipsum.com')" class="btn btn-small btn-secondary">Copy</button>
                             </div>
                         </div>
                     </div>
@@ -137,21 +160,16 @@
                         <div class="contact-icon">📱</div>
                         <div class="contact-details">
                             <h3>Phone</h3>
-                            <p id="phone-text">+91 98765 43210</p>
+                            <p id="phone-text">+1 234 567 8900</p>
                             <div class="contact-actions">
-                                <button onclick="copyToClipboard('+91 98765 43210')" class="btn btn-small">Copy</button>
+                                <button onclick="copyToClipboard('+1 234 567 8900')" class="btn btn-small">Copy</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="contact-visual">
-                    <div class="globe-container">
-                        <div class="globe">
-                            <div class="globe-sphere"></div>
-                            <div class="globe-ring ring-1"></div>
-                            <div class="globe-ring ring-2"></div>
-                            <div class="globe-ring ring-3"></div>
-                        </div>
+                    <div class="morphing-shape">
+                        <div class="shape-inner"></div>
                     </div>
                 </div>
             </div>
@@ -161,7 +179,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Parth Mahadik. All rights reserved.</p>
+            <p>&copy; 2025 Lorem Ipsum. All rights reserved.</p>
         </div>
     </footer>
 
