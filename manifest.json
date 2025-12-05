@@ -1,0 +1,21 @@
+{
+  "name": "Parth Mahadik - Portfolio",
+  "short_name": "Parth Mahadik",
+  "description": "Portfolio of Parth Mahadik, a CSE Student and Full Stack Developer specializing in Next.js, React, Android, and AI/ML",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/ic_launcher.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "software"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
