@@ -3,420 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parth Mahadik — Backend &amp; Systems Developer</title>
-    <meta name="description" content="Portfolio of Parth Sanjay Mahadik. Backend and systems developer building with Go, TypeScript, and Linux. Based in Mumbai.">
-    <meta name="keywords" content="Parth Mahadik, developer, Go, backend, systems, portfolio, Mumbai">
-    <meta name="author" content="Parth Sanjay Mahadik">
-    <meta property="og:title" content="Parth Mahadik — Backend & Systems Developer">
-    <meta property="og:description" content="Backend and systems developer building with Go, TypeScript, and Linux.">
-    <meta property="og:type" content="website">
-    <link rel="icon" href="favicon.ico">
+    <title>Parth Mahadik — Retro TV Portfolio</title>
+    <meta name="description" content="Portfolio of Parth Sanjay Mahadik. Backend and systems developer building with Go, TypeScript, and Linux.">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=DotGothic16&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="theme-indian-retro">
 
-    <!-- Grain overlay for texture -->
-    <div class="grain" aria-hidden="true"></div>
-
-    <!-- Cursor spotlight (desktop only) -->
-    <div class="cursor-spotlight" id="cursorSpotlight" aria-hidden="true"></div>
-
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <a href="#hero" class="nav__logo">12pm<span class="nav__logo-dot">.</span></a>
-        <div class="nav__links">
-            <a href="#about" class="nav__link">About</a>
-            <a href="#projects" class="nav__link">Work</a>
-            <a href="#skills" class="nav__link">Stack</a>
-            <a href="#contact" class="nav__link">Contact</a>
-        </div>
-        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#about" class="mobile-menu__link">About</a>
-        <a href="#projects" class="mobile-menu__link">Work</a>
-        <a href="#skills" class="mobile-menu__link">Stack</a>
-        <a href="#contact" class="mobile-menu__link">Contact</a>
+    <div class="intro-sequence" id="introSequence">
+        <div class="intro-logo">INITIALIZING SYSTEM...</div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero__container">
-            <div class="hero__badge">
-                <span class="hero__badge-dot"></span>
-                Open to opportunities
-            </div>
-            <h1 class="hero__title">
-                <span class="hero__title-line reveal-text">Parth Mahadik</span>
-            </h1>
-            <div class="hero__terminal">
-                <div class="terminal__bar">
-                    <span class="terminal__dot terminal__dot--red"></span>
-                    <span class="terminal__dot terminal__dot--yellow"></span>
-                    <span class="terminal__dot terminal__dot--green"></span>
-                    <span class="terminal__title">parth@dev ~</span>
-                </div>
-                <div class="terminal__body">
-                    <div class="terminal__line">
-                        <span class="terminal__prompt">$</span>
-                        <span class="terminal__text" id="typewriter"></span>
-                        <span class="terminal__cursor">_</span>
-                    </div>
-                </div>
-            </div>
-            <p class="hero__sub">
-                Backend &amp; systems developer. Building fast CLIs, real-time platforms, and things that run close to the metal. Based in Mumbai.
-            </p>
-            <div class="hero__actions">
-                <a href="#projects" class="btn btn--primary" data-magnetic>View my work</a>
-                <a href="https://github.com/Parth-12pm" target="_blank" rel="noopener" class="btn btn--ghost" data-magnetic>GitHub</a>
-            </div>
-        </div>
-        <div class="hero__scroll">
-            <div class="hero__scroll-line"></div>
-        </div>
-    </section>
+    <main class="room">
 
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="section__container">
-            <div class="section__label reveal-up">01 / About</div>
-            <div class="about__grid">
-                <div class="about__image-wrap reveal-up">
-                    <img src="Me.jpg" alt="Parth Mahadik" class="about__image" loading="lazy">
+        <!-- Room / surroundings around the TV -->
+        <div class="room-backdrop" aria-hidden="true">
+            <div class="wall"></div>
+            <div class="wall-shade"></div>
+            <div class="wall-frame frame-1"><div class="frame-mat"></div></div>
+            <div class="wall-frame frame-2"><div class="frame-mat"></div></div>
+            <div class="wall-clock">
+                <div class="clock-face">
+                    <div class="clock-hand hour"></div>
+                    <div class="clock-hand minute"></div>
+                    <div class="clock-pin"></div>
                 </div>
-                <div class="about__content">
-                    <h2 class="about__heading reveal-up">I build systems that don't waste your time.</h2>
-                    <p class="about__text reveal-up">
-                        I'm a backend and systems developer who cares about the internals. My main tools are Go for systems-level work and TypeScript/Next.js for the web layer. I've built a rootless VM manager that cold-boots in 5.5 seconds, real-time collaborative platforms with end-to-end encryption, and Android apps with live navigation.
-                    </p>
-                    <p class="about__text reveal-up">
-                        Currently pursuing B.E. in Computer Engineering at MCT's Rajiv Gandhi Institute of Technology, Mumbai. Previously completed my Diploma in Information Technology from Vidyalankar Polytechnic with 89.81%.
-                    </p>
-                    <div class="about__details reveal-up">
-                        <div class="about__detail">
-                            <span class="about__detail-label">Location</span>
-                            <span class="about__detail-value">Mumbai, Maharashtra</span>
+            </div>
+            <div class="hanging-plant">
+                <div class="plant-pot"></div>
+                <div class="plant-leaf l1"></div>
+                <div class="plant-leaf l2"></div>
+                <div class="plant-leaf l3"></div>
+            </div>
+            <div class="floor"></div>
+            <div class="rug"></div>
+            <div class="floor-plant">
+                <div class="fp-pot"></div>
+                <div class="fp-leaf f1"></div>
+                <div class="fp-leaf f2"></div>
+                <div class="fp-leaf f3"></div>
+                <div class="fp-leaf f4"></div>
+            </div>
+            <div class="screen-glow-wash" id="screenGlowWash"></div>
+        </div>
+
+        <div class="tv-scene">
+        <div class="tv-container" id="tvContainer">
+            <!-- Antenna (absolute positioned on top of the TV) -->
+            <div class="antenna">
+                <div class="antenna-stick left"><span class="antenna-tip"></span></div>
+                <div class="antenna-stick right"><span class="antenna-tip"></span></div>
+                <div class="antenna-base"></div>
+            </div>
+
+            <!-- TV Body takes up the full screen minus some margin to show its 3D depth -->
+            <div class="tv-body">
+                
+                <!-- Left: TV Screen Area -->
+                <div class="tv-screen-bezel">
+                    <div class="tv-screen-glass-curve">
+                        <div class="tv-screen">
+                            
+                            <!-- CRT Effects -->
+                            <div class="crt-scanlines"></div>
+                            <div class="crt-flicker"></div>
+                            <div class="crt-glass-reflection"></div>
+                            <div class="glitch-overlay" id="glitchOverlay"></div>
+                            <div class="static-noise" id="staticNoise"></div>
+
+                            <!-- Screen Content -->
+                            <div class="screen-content" id="screenContent">
+                                <!-- Channel 0: Power Off -->
+                                <div class="channel-view" id="channel-off">
+                                    <div class="power-off-dot"></div>
+                                </div>
+
+                                <!-- Channel 1: Home / Hero -->
+                                <div class="channel-view hidden" id="channel-home">
+                                    <div class="retro-badge">CH-01 // MAIN</div>
+                                    <div class="content-scroll">
+                                        <h1 class="hero-title">PARTH MAHADIK</h1>
+                                        <h2 class="hero-subtitle">Backend & Systems Developer</h2>
+                                        
+                                        <div class="terminal-block">
+                                            <p class="typewriter">> parth@dev ~</p>
+                                            <p>> STATUS: Open to opportunities</p>
+                                        </div>
+                                        
+                                        <p class="hero-desc">Building fast CLIs, real-time platforms, and things that run close to the metal. Based in Mumbai.</p>
+                                        
+                                        <div class="action-links">
+                                            <a href="https://github.com/Parth-12pm" target="_blank" rel="noopener">[ VIEW GITHUB ]</a>
+                                            <a href="Parth_Mahadik_Resume.pdf" download>[ DOWNLOAD RESUME ]</a>
+                                        </div>
+                                        
+                                        <p class="blink helper-text">>> USE TV CONTROLS ON RIGHT TO NAVIGATE CHANNELS <<</p>
+                                    </div>
+                                </div>
+
+                                <!-- Channel 2: About / Journey -->
+                                <div class="channel-view hidden" id="channel-about">
+                                    <div class="retro-badge">CH-02 // ABOUT</div>
+                                    <div class="content-scroll">
+                                        <h2>I BUILD SYSTEMS THAT DON'T WASTE YOUR TIME.</h2>
+                                        <p>I'm a backend and systems developer who cares about the internals. My main tools are Go for systems-level work and TypeScript/Next.js for the web layer. I've built a rootless VM manager that cold-boots in 5.5 seconds, real-time collaborative platforms with end-to-end encryption, and Android apps with live navigation.</p>
+                                        
+                                        <br>
+                                        <h3>EDUCATION</h3>
+                                        <p>> B.E. in Computer Engineering at MCT's Rajiv Gandhi Institute of Technology, Mumbai.</p>
+                                        <p>> Diploma in Information Technology from Vidyalankar Polytechnic (89.81%).</p>
+                                        
+                                        <br>
+                                        <h3>EXPERIENCE</h3>
+                                        <div class="exp-block">
+                                            <h4>Junior Software Engineer @ Hertzsoft Technologies Pvt. Ltd.</h4>
+                                            <p class="dim">[ Jun 2024 — Jul 2024 ]</p>
+                                            <p>Gained hands-on experience integrating frontend and backend technologies into production-ready solutions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Channel 3: Projects -->
+                                <div class="channel-view hidden" id="channel-projects">
+                                    <div class="retro-badge">CH-03 // PROJECTS</div>
+                                    <div class="content-scroll">
+                                        
+                                        <div class="project-block">
+                                            <h3>12pm: Rootless VM Manager</h3>
+                                            <p class="tags">[Go] [QEMU/KVM] [Cobra] [Cloud-Init] [Linux]</p>
+                                            <p>A fast, rootless, developer-first VM manager for Linux built in Go. Inspired by Docker's developer experience. Achieves 5.5s cold boot (8x faster than VirtualBox) via KVM acceleration and auto-optimized cloud-init. Features multi-VM management with dynamic port allocation, passwordless SSH, snapshot save/restore, stale PID auto-detection, and 9 switchable terminal themes.</p>
+                                            <a href="#" class="link-disabled">[ Private Repository ]</a>
+                                        </div>
+
+                                        <div class="project-block">
+                                            <h3>AtriumVerse</h3>
+                                            <p class="tags">[Next.js] [FastAPI] [Phaser 3] [LiveKit] [PostgreSQL] [Redis]</p>
+                                            <p>A tile-based virtual office platform where player position drives proximity audio, zone-based video, and messaging. Features zero-knowledge E2E encryption (X25519, ECDH, AES-256-GCM) with per-epoch key rotation, LiveKit WebRTC for proximity audio and zone video, Phaser 3 game engine for tile-based movement, and an async FastAPI backend.</p>
+                                            <a href="https://github.com/Parth-12pm/AtriumVerse" target="_blank">[ View on GitHub ]</a>
+                                        </div>
+
+                                        <div class="project-block">
+                                            <h3>Code Collab</h3>
+                                            <p class="tags">[TypeScript] [Next.js] [Liveblocks]</p>
+                                            <p>A real-time collaborative code and document editing platform that removes version-control delays. Multiple developers work side-by-side in the browser with live synchronization.</p>
+                                            <a href="https://github.com/Parth-12pm/Code_Collab" target="_blank">[ View on GitHub ]</a>
+                                        </div>
+
+                                        <div class="project-block">
+                                            <h3>StallSpot</h3>
+                                            <p class="tags">[Next.js] [MongoDB] [WebSocket]</p>
+                                            <p>A web platform for interactive stall booking at exhibitions and trade fairs. Features a dynamic floor plan with real-time stall selection for organizers and vendors via WebSocket.</p>
+                                            <a href="https://github.com/Parth-12pm/next-stallSpot" target="_blank">[ View on GitHub ]</a>
+                                        </div>
+                                        
+                                        <div class="project-block">
+                                            <h3>Other Projects</h3>
+                                            <p>> 2D Interactive Playground (React, Konva) - <a href="https://github.com/Parth-12pm/2D-interactive-Playground-using-React-Konva" target="_blank">[Link]</a></p>
+                                            <p>> Travel Mate (Android, Java, Maps API) - <a href="https://github.com/Parth-12pm/Travel_Mate" target="_blank">[Link]</a></p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- Channel 4: Skills -->
+                                <div class="channel-view hidden" id="channel-skills">
+                                    <div class="retro-badge">CH-04 // STACK</div>
+                                    <div class="content-scroll">
+                                        <h2>TECHNICAL STACK</h2>
+                                        
+                                        <div class="skill-grid">
+                                            <div class="skill-category">
+                                                <h3>LANGUAGES</h3>
+                                                <p>JavaScript, TypeScript, Python, Java, <span class="highlight">Go</span>, C++</p>
+                                            </div>
+                                            <div class="skill-category">
+                                                <h3>SYSTEMS & DEVOPS</h3>
+                                                <p><span class="highlight">Go/Cobra CLI</span>, <span class="highlight">QEMU/KVM</span>, Linux, Git/GitHub, Docker</p>
+                                            </div>
+                                            <div class="skill-category">
+                                                <h3>FRONTEND</h3>
+                                                <p>React.js, Next.js, Tailwind CSS, Shadcn UI, HTML/CSS</p>
+                                            </div>
+                                            <div class="skill-category">
+                                                <h3>BACKEND & APIs</h3>
+                                                <p>FastAPI, REST APIs, WebSocket, Pydantic, OAuth</p>
+                                            </div>
+                                            <div class="skill-category">
+                                                <h3>DATABASES</h3>
+                                                <p>MongoDB, SQL, PostgreSQL, Redis, Firebase</p>
+                                            </div>
+                                            <div class="skill-category">
+                                                <h3>MOBILE & OTHER</h3>
+                                                <p>Android Studio, Java for Android, Google Maps API, Liveblocks</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Channel 5: Contact -->
+                                <div class="channel-view hidden" id="channel-contact">
+                                    <div class="retro-badge">CH-05 // CONTACT</div>
+                                    <div class="content-scroll">
+                                        <h2>LET'S BUILD SOMETHING.</h2>
+                                        <p>I'm looking for roles in Go, backend, or full-stack development. If you have an interesting problem, I'd like to hear about it.</p>
+                                        <br>
+                                        
+                                        <div class="contact-links">
+                                            <p>> GITHUB: <a href="https://github.com/Parth-12pm" target="_blank">github.com/Parth-12pm</a></p>
+                                            <p>> LINKEDIN: <a href="https://linkedin.com/in/parth-mahadik-12-pm" target="_blank">linkedin.com/in/parth-mahadik-12-pm</a></p>
+                                            <p>> EMAIL: <a href="mailto:parthsmahadik1202@gmail.com">parthsmahadik1202@gmail.com</a></p>
+                                            <p>> RESUME: <a href="Parth_Mahadik_Resume.pdf" download>Download PDF</a></p>
+                                        </div>
+                                        
+                                        <br><br>
+                                        <p class="blink">SYSTEM STANDBY...</p>
+                                    </div>
+                                </div>
+
+                                <!-- Error / Signal Not Found -->
+                                <div class="channel-view hidden" id="channel-error">
+                                    <div class="signal-error">
+                                        <h2 class="glitch-text" data-text="ERROR 404">ERROR 404</h2>
+                                        <p class="blink">SIGNAL NOT FOUND</p>
+                                        <div class="color-bars">
+                                            <div style="background:#fff"></div>
+                                            <div style="background:#ffeb3b"></div>
+                                            <div style="background:#00ffff"></div>
+                                            <div style="background:#00ff00"></div>
+                                            <div style="background:#ff00ff"></div>
+                                            <div style="background:#ff0000"></div>
+                                            <div style="background:#0000ff"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="about__detail">
-                            <span class="about__detail-label">Education</span>
-                            <span class="about__detail-value">B.E. Computer Engineering</span>
-                        </div>
-                        <div class="about__detail">
-                            <span class="about__detail-label">Focus</span>
-                            <span class="about__detail-value">Go, Backend, Systems</span>
-                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section class="section experience">
-        <div class="section__container">
-            <div class="section__label reveal-up">02 / Experience</div>
-            <div class="experience__card reveal-up">
-                <div class="experience__header">
-                    <div>
-                        <h3 class="experience__role">Junior Software Engineer</h3>
-                        <p class="experience__company">Hertzsoft Technologies Pvt. Ltd.</p>
+                <!-- Right: TV Controls (Panel) -->
+                <div class="tv-controls">
+                    
+                    <div class="speaker-grill top-grill">
+                        <div class="grill-hole"></div><div class="grill-hole"></div><div class="grill-hole"></div>
+                        <div class="grill-hole"></div><div class="grill-hole"></div><div class="grill-hole"></div>
                     </div>
-                    <span class="experience__date">Jun 2024 — Jul 2024</span>
-                </div>
-                <p class="experience__desc">
-                    Gained hands-on experience integrating frontend and backend technologies into production-ready solutions.
-                </p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section class="section projects" id="projects">
-        <div class="section__container">
-            <div class="section__label reveal-up">03 / Selected Work</div>
-            <h2 class="section__heading reveal-up">Projects I've shipped</h2>
-
-            <!-- Project 1: 12pm VM Manager -->
-            <article class="project reveal-up" data-tilt>
-                <div class="project__content">
-                    <div class="project__meta">
-                        <span class="project__tag">Go</span>
-                        <span class="project__tag">QEMU/KVM</span>
-                        <span class="project__tag">Cobra</span>
-                        <span class="project__tag">Cloud-Init</span>
-                        <span class="project__tag">Linux</span>
+                    <div class="brand">
+                        <div class="brand-logo">MAHADIK</div>
+                        <div class="brand-sub">HEAVY DUTY CRT</div>
                     </div>
-                    <h3 class="project__title">12pm: Rootless VM Manager</h3>
-                    <p class="project__desc">
-                        A fast, rootless, developer-first VM manager for Linux built in Go. Inspired by Docker's developer experience. Achieves 5.5s cold boot (8x faster than VirtualBox) via KVM acceleration and auto-optimized cloud-init. Features multi-VM management with dynamic port allocation, passwordless SSH, snapshot save/restore, stale PID auto-detection, and 9 switchable terminal themes.
-                    </p>
-                    <div class="project__links">
-                        <span class="project__link project__link--private">Private Repository</span>
-                    </div>
-                    <span class="project__date">May 2026</span>
-                </div>
-                <div class="project__visual project__visual--terminal">
-                    <div class="terminal terminal--mini">
-                        <div class="terminal__bar">
-                            <span class="terminal__dot terminal__dot--red"></span>
-                            <span class="terminal__dot terminal__dot--yellow"></span>
-                            <span class="terminal__dot terminal__dot--green"></span>
+                    
+                    <div class="knobs">
+                        <div class="knob-container">
+                            <label>UHF</label>
+                            <div class="knob knob3d" id="channelKnob">
+                                <div class="knob-grip"></div>
+                                <div class="knob-marker"></div>
+                            </div>
+                            <label>CH</label>
                         </div>
-                        <div class="terminal__body terminal__body--code">
-                            <code><span class="code-prompt">$</span> 12pm start ubuntu-dev</code>
-                            <code><span class="code-dim">Booting VM 'ubuntu-dev'...</span></code>
-                            <code><span class="code-dim">KVM acceleration: enabled</span></code>
-                            <code><span class="code-dim">Cloud-init: optimized</span></code>
-                            <code><span class="code-green">Ready in 5.5s</span></code>
-                            <code>&nbsp;</code>
-                            <code><span class="code-prompt">$</span> 12pm ssh ubuntu-dev</code>
-                            <code><span class="code-green">parth@ubuntu-dev:~$</span> <span class="code-cursor">_</span></code>
+                        <div class="knob-container">
+                            <label>VOL</label>
+                            <div class="knob knob3d" id="volumeKnob">
+                                <div class="knob-grip"></div>
+                                <div class="knob-marker"></div>
+                            </div>
+                            <label>LVL</label>
                         </div>
                     </div>
-                </div>
-            </article>
 
-            <!-- Project 2: AtriumVerse -->
-            <article class="project project--reverse reveal-up" data-tilt>
-                <div class="project__content">
-                    <div class="project__meta">
-                        <span class="project__tag">Next.js</span>
-                        <span class="project__tag">FastAPI</span>
-                        <span class="project__tag">Phaser 3</span>
-                        <span class="project__tag">LiveKit</span>
-                        <span class="project__tag">PostgreSQL</span>
-                        <span class="project__tag">Redis</span>
+                    <div class="channel-numpad">
+                        <div class="numpad-label">CHANNEL SELECT</div>
+                        <div class="numpad-grid">
+                            <button class="ch-btn btn3d" data-ch="1">1</button>
+                            <button class="ch-btn btn3d" data-ch="2">2</button>
+                            <button class="ch-btn btn3d" data-ch="3">3</button>
+                            <button class="ch-btn btn3d" data-ch="4">4</button>
+                            <button class="ch-btn btn3d" data-ch="5">5</button>
+                            <button class="ch-btn btn3d" data-ch="error">?</button>
+                        </div>
                     </div>
-                    <h3 class="project__title">AtriumVerse</h3>
-                    <p class="project__desc">
-                        A tile-based virtual office platform where player position drives proximity audio, zone-based video, and messaging. Features zero-knowledge E2E encryption (X25519, ECDH, AES-256-GCM) with per-epoch key rotation, LiveKit WebRTC for proximity audio and zone video, Phaser 3 game engine for tile-based movement, and an async FastAPI backend with PostgreSQL, Redis, and WebSocket gateway.
-                    </p>
-                    <div class="project__links">
-                        <a href="https://github.com/Parth-12pm/AtriumVerse" target="_blank" rel="noopener" class="project__link">View on GitHub</a>
-                    </div>
-                    <span class="project__date">April 2026</span>
-                </div>
-                <div class="project__visual project__visual--grid">
-                    <div class="atrium-grid">
-                        <div class="atrium-tile atrium-tile--active"></div>
-                        <div class="atrium-tile"></div>
-                        <div class="atrium-tile"></div>
-                        <div class="atrium-tile atrium-tile--zone"></div>
-                        <div class="atrium-tile"></div>
-                        <div class="atrium-tile atrium-tile--active"></div>
-                        <div class="atrium-tile atrium-tile--zone"></div>
-                        <div class="atrium-tile"></div>
-                        <div class="atrium-tile"></div>
-                        <div class="atrium-tile"></div>
-                        <div class="atrium-tile atrium-tile--zone"></div>
-                        <div class="atrium-tile"></div>
-                        <div class="atrium-tile"></div>
-                        <div class="atrium-tile atrium-tile--active"></div>
-                        <div class="atrium-tile"></div>
-                        <div class="atrium-tile"></div>
-                    </div>
-                </div>
-            </article>
 
-            <!-- Project 3: Code Collab -->
-            <article class="project reveal-up" data-tilt>
-                <div class="project__content">
-                    <div class="project__meta">
-                        <span class="project__tag">TypeScript</span>
-                        <span class="project__tag">Next.js</span>
-                        <span class="project__tag">Liveblocks</span>
+                    <div class="system-buttons">
+                        <button class="sys-btn btn3d power-btn" id="powerBtn">
+                            <div class="btn-led" id="powerLed"></div>
+                            POWER
+                        </button>
+                        <button class="sys-btn btn3d theme-btn" id="themeBtn">THEME</button>
+                        <button class="sys-btn btn3d font-btn" id="fontBtn">FONT</button>
                     </div>
-                    <h3 class="project__title">Code Collab</h3>
-                    <p class="project__desc">
-                        A real-time collaborative code and document editing platform that removes version-control delays. Multiple developers work side-by-side in the browser with live synchronization.
-                    </p>
-                    <div class="project__links">
-                        <a href="https://github.com/Parth-12pm/Code_Collab" target="_blank" rel="noopener" class="project__link">View on GitHub</a>
+                    
+                    <div class="speaker-grill bottom-grill">
+                        <div class="grill-hole"></div><div class="grill-hole"></div><div class="grill-hole"></div>
+                        <div class="grill-hole"></div><div class="grill-hole"></div><div class="grill-hole"></div>
+                        <div class="grill-hole"></div><div class="grill-hole"></div><div class="grill-hole"></div>
                     </div>
-                    <span class="project__date">Feb 2025</span>
-                </div>
-                <div class="project__visual">
-                    <img src="code_collab.png" alt="Code Collab screenshot" class="project__image" loading="lazy">
-                </div>
-            </article>
 
-            <!-- Project 4: StallSpot -->
-            <article class="project project--reverse reveal-up" data-tilt>
-                <div class="project__content">
-                    <div class="project__meta">
-                        <span class="project__tag">Next.js</span>
-                        <span class="project__tag">MongoDB</span>
-                        <span class="project__tag">WebSocket</span>
-                    </div>
-                    <h3 class="project__title">StallSpot</h3>
-                    <p class="project__desc">
-                        A web platform for interactive stall booking at exhibitions and trade fairs. Features a dynamic floor plan with real-time stall selection for organizers and vendors via WebSocket.
-                    </p>
-                    <div class="project__links">
-                        <a href="https://github.com/Parth-12pm/next-stallSpot" target="_blank" rel="noopener" class="project__link">View on GitHub</a>
-                    </div>
-                    <span class="project__date">Oct 2024</span>
-                </div>
-                <div class="project__visual">
-                    <img src="stallspot.png" alt="StallSpot screenshot" class="project__image" loading="lazy">
-                </div>
-            </article>
-
-            <!-- Smaller projects row -->
-            <div class="projects__small-grid">
-                <article class="project-card reveal-up">
-                    <div class="project-card__header">
-                        <h4 class="project-card__title">2D Interactive Playground</h4>
-                        <a href="https://github.com/Parth-12pm/2D-interactive-Playground-using-React-Konva" target="_blank" rel="noopener" class="project-card__link" aria-label="View 2D Interactive Playground on GitHub">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                        </a>
-                    </div>
-                    <p class="project-card__desc">Canvas editor for creating and manipulating 2D graphics and text, built with React-Konva and Shadcn UI.</p>
-                    <div class="project-card__tags">
-                        <span>React</span>
-                        <span>React-Konva</span>
-                        <span>Shadcn UI</span>
-                    </div>
-                    <span class="project-card__date">Sep 2024</span>
-                </article>
-                <article class="project-card reveal-up">
-                    <div class="project-card__header">
-                        <h4 class="project-card__title">Travel Mate</h4>
-                        <a href="https://github.com/Parth-12pm/Travel_Mate" target="_blank" rel="noopener" class="project-card__link" aria-label="View Travel Mate on GitHub">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                        </a>
-                    </div>
-                    <p class="project-card__desc">Android app for seamless trip planning with itineraries, travel journals, Google Maps integration for live weather and turn-by-turn navigation.</p>
-                    <div class="project-card__tags">
-                        <span>Android</span>
-                        <span>Java</span>
-                        <span>Google Maps API</span>
-                    </div>
-                    <span class="project-card__date">Mar 2025</span>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section skills" id="skills">
-        <div class="section__container">
-            <div class="section__label reveal-up">04 / Technical Stack</div>
-            <div class="skills__grid">
-                <div class="skill-group reveal-up">
-                    <h3 class="skill-group__title">Languages</h3>
-                    <div class="skill-group__items">
-                        <span class="skill-pill">JavaScript</span>
-                        <span class="skill-pill">TypeScript</span>
-                        <span class="skill-pill">Python</span>
-                        <span class="skill-pill">Java</span>
-                        <span class="skill-pill skill-pill--accent">Go</span>
-                        <span class="skill-pill">C++</span>
-                    </div>
-                </div>
-                <div class="skill-group reveal-up">
-                    <h3 class="skill-group__title">Frontend</h3>
-                    <div class="skill-group__items">
-                        <span class="skill-pill">React.js</span>
-                        <span class="skill-pill">Next.js</span>
-                        <span class="skill-pill">Tailwind CSS</span>
-                        <span class="skill-pill">Shadcn UI</span>
-                        <span class="skill-pill">HTML/CSS</span>
-                    </div>
-                </div>
-                <div class="skill-group reveal-up">
-                    <h3 class="skill-group__title">Backend & APIs</h3>
-                    <div class="skill-group__items">
-                        <span class="skill-pill">FastAPI</span>
-                        <span class="skill-pill">REST APIs</span>
-                        <span class="skill-pill">WebSocket</span>
-                        <span class="skill-pill">Pydantic</span>
-                        <span class="skill-pill">OAuth</span>
-                    </div>
-                </div>
-                <div class="skill-group reveal-up">
-                    <h3 class="skill-group__title">Systems & DevOps</h3>
-                    <div class="skill-group__items">
-                        <span class="skill-pill skill-pill--accent">Go/Cobra CLI</span>
-                        <span class="skill-pill skill-pill--accent">QEMU/KVM</span>
-                        <span class="skill-pill">Linux</span>
-                        <span class="skill-pill">Git/GitHub</span>
-                    </div>
-                </div>
-                <div class="skill-group reveal-up">
-                    <h3 class="skill-group__title">Databases</h3>
-                    <div class="skill-group__items">
-                        <span class="skill-pill">MongoDB</span>
-                        <span class="skill-pill">SQL</span>
-                        <span class="skill-pill">PostgreSQL</span>
-                        <span class="skill-pill">Firebase</span>
-                    </div>
-                </div>
-                <div class="skill-group reveal-up">
-                    <h3 class="skill-group__title">Mobile & Other</h3>
-                    <div class="skill-group__items">
-                        <span class="skill-pill">Android Studio</span>
-                        <span class="skill-pill">Java for Android</span>
-                        <span class="skill-pill">Google Maps API</span>
-                        <span class="skill-pill">Liveblocks</span>
-                    </div>
                 </div>
             </div>
+
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="section__container">
-            <div class="section__label reveal-up">05 / Get in touch</div>
-            <h2 class="contact__heading reveal-up">Let's build something.</h2>
-            <p class="contact__text reveal-up">
-                I'm looking for roles in Go, backend, or full-stack development. If you have an interesting problem, I'd like to hear about it.
-            </p>
-
-            <!-- Honeypot: hidden from humans, traps bots -->
-            <div style="position:absolute;left:-9999px;" aria-hidden="true">
-                <input type="email" name="email_confirm" tabindex="-1" autocomplete="off" value="">
+        <!-- TV stand / console table -->
+        <div class="tv-stand" aria-hidden="true">
+            <div class="tv-shadow"></div>
+            <div class="console-top"></div>
+            <div class="console-front">
+                <div class="console-handle"></div>
             </div>
-
-            <div class="contact__links reveal-up">
-                <!-- Email obfuscated: assembled by JS at runtime -->
-                <a href="#" class="contact__link" id="contact-email"
-                   data-user="cGFydGhzbWFoYWRpazEyMDI3"
-                   data-host="Z21haWwuY29t"
-                   rel="nofollow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13L2 4"/></svg>
-                    <span class="contact__obfuscated">Enable JS to view</span>
-                </a>
-                <a href="https://linkedin.com/in/parth-mahadik-12-pm" target="_blank" rel="noopener nofollow" class="contact__link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                    LinkedIn
-                </a>
-                <a href="https://github.com/Parth-12pm" target="_blank" rel="noopener nofollow" class="contact__link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-                    GitHub
-                </a>
-            </div>
-            <a href="parth_mahadik_resume.pdf" download class="btn btn--primary contact__resume reveal-up" data-magnetic>Download Resume</a>
+            <div class="console-leg left"></div>
+            <div class="console-leg right"></div>
         </div>
-    </section>
+        </div><!-- /.tv-scene -->
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__container">
-            <span class="footer__text">Parth Mahadik, 2026</span>
-            <span class="footer__text">Mumbai, India</span>
-        </div>
-    </footer>
+    </main>
+
+    <button class="sfx-toggle" id="sfxToggle" title="Toggle sound effects" aria-label="Toggle sound effects">
+        <span class="sfx-icon" id="sfxIcon">&#128266;</span>
+    </button>
 
     <script src="script.js"></script>
 </body>
