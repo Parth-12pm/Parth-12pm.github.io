@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const glitchOverlay = document.getElementById('glitchOverlay');
     const staticNoise = document.getElementById('staticNoise');
+    const tvContainer = document.getElementById('tvContainer');
 
     const channels = {
         '0': document.getElementById('channel-off'),
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'error': document.getElementById('channel-error')
     };
 
-    let isPowerOn = true;
+    let isPowerOn = false;
     let currentChannel = '1';
     let currentThemeIdx = 0;
     let currentFontIdx = 0;
@@ -31,10 +32,122 @@ document.addEventListener('DOMContentLoaded', () => {
     const fonts = ['', 'font-press-start', 'font-dotgothic'];
 
     /* =========================================================
-       SOUND ENGINE — synthesized with the Web Audio API.
-       No external audio files, so nothing to fetch or break.
-       Sounds only ever start from a user gesture (click), which
-       also keeps us safely inside browser autoplay policies.
+       STARFIELD CANVAS
+    ========================================================= */
+    const starsCanvas = document.getElementById('starsCanvas');
+    if (starsCanvas) {
+        const ctx = starsCanvas.getContext('2d');
+        let stars = [];
+        const STAR_COUNT = 250;
+        let animFrame;
+
+        function resizeCanvas() {
+            starsCanvas.width = window.innerWidth;
+            starsCanvas.height = window.innerHeight;
+        }
+
+        function createStars() {
+            stars = [];
+            for (let i = 0; i < STAR_COUNT; i++) {
+                stars.push({
+                    x: Math.random() * starsCanvas.width,
+                    y: Math.random() * starsCanvas.height,
+                    size: Math.random() * 2 + 0.3,
+                    speed: Math.random() * 0.15 + 0.02,
+                    opacity: Math.random() * 0.7 + 0.3,
+                    twinkleSpeed: Math.random() * 0.02 + 0.005,
+                    twinkleOffset: Math.random() * Math.PI * 2
+                });
+            }
+        }
+
+        function drawStars(time) {
+            ctx.clearRect(0, 0, starsCanvas.width, starsCanvas.height);
+            stars.forEach(star => {
+                const twinkle = Math.sin(time * star.twinkleSpeed + star.twinkleOffset);
+                const alpha = star.opacity * (0.6 + 0.4 * twinkle);
+                
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+                ctx.fill();
+
+                // Subtle glow for brighter stars
+                if (star.size > 1.2) {
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.size * 2.5, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(200, 220, 255, ${alpha * 0.08})`;
+                    ctx.fill();
+                }
+
+                // Slow drift
+                star.y -= star.speed;
+                if (star.y < -5) {
+                    star.y = starsCanvas.height + 5;
+                    star.x = Math.random() * starsCanvas.width;
+                }
+            });
+            animFrame = requestAnimationFrame(drawStars);
+        }
+
+        resizeCanvas();
+        createStars();
+        drawStars(0);
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            createStars();
+        });
+    }
+
+    /* =========================================================
+       3D TILT ON HOVER
+    ========================================================= */
+    if (tvContainer) {
+        const TILT_MAX = 6; // degrees
+        let targetRotateX = 0;
+        let targetRotateY = 0;
+        let currentRotateX = 0;
+        let currentRotateY = 0;
+        let tiltActive = false;
+        let introComplete = false;
+
+        // Wait for intro animation to complete before enabling tilt
+        setTimeout(() => { introComplete = true; }, 2500);
+
+        document.addEventListener('mousemove', (e) => {
+            if (!introComplete) return;
+            const rect = tvContainer.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            // Calculate distance from TV center (normalized -1 to 1)
+            const dx = (e.clientX - centerX) / (window.innerWidth / 2);
+            const dy = (e.clientY - centerY) / (window.innerHeight / 2);
+
+            targetRotateY = dx * TILT_MAX;
+            targetRotateX = -dy * TILT_MAX * 0.6;
+            tiltActive = true;
+        });
+
+        document.addEventListener('mouseleave', () => {
+            targetRotateX = 0;
+            targetRotateY = 0;
+        });
+
+        function animateTilt() {
+            if (introComplete) {
+                currentRotateX += (targetRotateX - currentRotateX) * 0.08;
+                currentRotateY += (targetRotateY - currentRotateY) * 0.08;
+                tvContainer.style.transform = `rotateX(${currentRotateX}deg) rotateY(${currentRotateY}deg)`;
+            }
+            requestAnimationFrame(animateTilt);
+        }
+        animateTilt();
+    }
+
+    /* =========================================================
+       SOUND ENGINE
     ========================================================= */
     let audioCtx = null;
     let sfxEnabled = true;
@@ -89,9 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!sfxEnabled) return;
         const ctx = getCtx();
         if (!ctx) return;
-        // mechanical click
         playClick(turningOn ? 2200 : 900, 0.06, 0.22);
-        // CRT degauss / power hum sweep
         const osc = ctx.createOscillator();
         osc.type = 'sine';
         const start = turningOn ? 80 : 600;
@@ -149,10 +260,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize
-    powerBtn.classList.add('on');
-    switchChannel('1', true);
+    powerBtn.classList.remove('on');
+    document.body.classList.add('tv-off');
+    hideAllChannels();
+    channels['0'].classList.remove('hidden');
 
     // --- TV CONTROLS ---
+
+    const stickyNote = document.getElementById('stickyNote');
 
     // Power
     powerBtn.addEventListener('click', () => {
@@ -160,6 +275,8 @@ document.addEventListener('DOMContentLoaded', () => {
         powerBtn.classList.toggle('on', isPowerOn);
         playPowerThunk(isPowerOn);
         document.body.classList.toggle('tv-off', !isPowerOn);
+
+        if (stickyNote) stickyNote.style.display = 'none';
 
         if (!isPowerOn) {
             playStatic(0.4);
@@ -225,9 +342,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Button visual press down simulation for non-active states
-    const all3dBtns = document.querySelectorAll('.btn3d, .knob3d');
-    all3dBtns.forEach(btn => {
+    // Button press animation for all interactive elements
+    const allBtns = document.querySelectorAll('.ch-btn, .sys-btn, .knob3d');
+    allBtns.forEach(btn => {
         btn.addEventListener('mousedown', () => btn.classList.add('pressed'));
         btn.addEventListener('mouseup', () => btn.classList.remove('pressed'));
         btn.addEventListener('mouseleave', () => btn.classList.remove('pressed'));
@@ -247,7 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function switchChannel(chKey, skipEffect = false) {
         if (!isPowerOn && !skipEffect) return;
 
-        // Ensure channel exists
         if (!channels[chKey]) chKey = 'error';
         currentChannel = chKey;
 
