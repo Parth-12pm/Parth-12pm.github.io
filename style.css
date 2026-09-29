@@ -1480,18 +1480,73 @@ a:hover {
     .tv-controls {
         width: 100%;
         min-width: unset;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 1em;
-        gap: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2em 1.5em;
+        gap: 1.5em;
         border-left: none;
-        border-top: 1px solid rgba(255,255,255,0.04);
+        border-top: 2px solid #000;
+        background: linear-gradient(180deg, var(--body-1) 0%, var(--body-2) 100%);
+        border-radius: 0 0 1em 1em;
     }
-    .speaker-section { display: none; }
-    .control-group { border-top: none; padding: 0.5em; }
-    .brand { margin-top: 0; padding: 0.5em; }
-    .sticky-note { display: none; }
+    
+    .speaker-section { 
+        display: none; 
+    }
+    
+    .control-group { 
+        width: 100%;
+        padding: 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .group-label {
+        margin-bottom: 1em;
+    }
+
+    /* Stretch Numpad 2x3 to fill space */
+    .channel-numpad {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        gap: 1em;
+    }
+
+    /* System buttons side by side filling space */
+    .sys-btns {
+        flex-direction: row;
+        width: 100%;
+        gap: 1em;
+    }
+    .power-container {
+        flex: 1;
+    }
+    .power-btn {
+        width: 100%;
+    }
+    .sys-btn {
+        flex: 1;
+    }
+
+    /* Adjust sticky note for mobile */
+    .sticky-note {
+        left: 50%;
+        top: -3em;
+        transform: translateX(-50%) rotate(-2deg);
+    }
+    @keyframes noteWiggle {
+        0%, 100% { transform: translateX(-50%) rotate(-2deg); }
+        50% { transform: translateX(-50%) rotate(2deg); }
+    }
+
+    .brand {
+        margin-top: 1em;
+        padding: 0;
+        border: none;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1503,8 +1558,26 @@ a:hover {
         width: 6em;
         height: 3em;
     }
-    .knob-row { display: none; }
-    .brand-sub { display: none; }
+    .knob-row {
+        gap: 2em;
+    }
+    .knob3d {
+        width: 3.5em;
+        height: 3.5em;
+    }
+    .sys-btn {
+        font-size: 0.75em; /* shrink font slightly to fit 3 in a row */
+        padding: 0 0.5em;
+    }
+    .sticky-note {
+        left: 50%;
+        top: -3.5em;
+        transform: translateX(-50%) rotate(-5deg);
+    }
+    @keyframes noteWiggle {
+        0%, 100% { transform: translateX(-50%) rotate(-5deg); }
+        50% { transform: translateX(-50%) rotate(-1deg); }
+    }
 }
 
 @media (max-height: 500px) {
